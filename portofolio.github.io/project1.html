@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+</body>
+</html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="stylesheet2.css">
+    <title>chalange jquery </title>
+    <h1 align="center">5 Teman stmik ikmi cirebon</h1>
+    <style>
+         body {
+    font-family: "arial";
+    font-size: 50pxpx;
+    background-color: mediumaquamarine;
+  }
+
+        table {
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 20px;
+        }
+        th {
+            background-color: yellow;
+            color: darkblue;
+        }
+        form{
+            width: 50px;
+            margin: 20px auto;
+        }
+        label,input 
+        {
+        display: block;
+        margin: 5px 0;
+        font-si: 15px;
+        }
+        button {
+        display: block;
+        }
+    </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <table class="tabelku">
+        <tr>
+            <th rowspan="2">Nama Teman</th>
+        </tr>
+        <tr>
+            <th>Angkatan</th>
+            <th>Alamat</th>
+            <th>Aksi</th>
+        </tr>
+        <tr class="row" id="row__1">
+            <td class="cell" id="nama__1">Ati Sumiati</td>
+            <td class="cell" id="angkatan__1">2021</td>
+            <td class="cell" id="alamat__1">Rajadesa</td>
+            <td class="cell" id="hapus__1">Hapus</td>
+        </tr>
+        <tr class="row" id="row__2">
+            <td class="cell" id="nama__2">Riki fajri</td>
+            <td class="cell" id="angkatan__2">2021</td>
+            <td class="cell" id="alamat__2">Panjalu</td>
+            <td class="cell" id="hapus__2">Hapus</td>
+        </tr>
+        <tr class="row"  id="row__3" >
+            <td class="cell" id="nama__3">Ayu Ningrat </td>
+            <td class="cell" id="angkatan__3">2021</td>
+            <td class="cell" id="alamat__3">Cirebon</td>
+            <td class="cell" id="hapus__3">Hapus</td>
+        </tr>
+        <tr class="row" id="row__4">
+            <td class="cell" id="nama__4">Dwina Aurelia</td>
+            <td class="cell" id="angkatan__4">2021</td>
+            <td class="cell" id="alamat__4">Cirebon</td>
+            <td class="cell" id="hapus__4">Hapus</td>
+        </tr>
+        <tr class="row" id="row__5">
+            <td class="cell" id="nama__5">Eka Puspita</td>
+            <td class="cell" id="angkatan__5">2021</td>
+            <td class="cell" id="alamat__5">Cirebon</td>
+            <td class="cell" id="hapus__5">Hapus</td>
+        </tr>
+     
+   </table>
+    <script>
+        $(document).ready(function(){
+            //alert(0)
+            $('.cell').click(function(){
+                //alert(1)
+                let isi = $(this).text();
+                let tid = $(this).prop('id');
+                let rid = tid.split('__');
+                let id_row = rid[1];
+                let nama_mahasiswa = $('#nama__'+id_row).text();
+                
+                if(isi=='Hapus'){
+                    let yakin = confirm(`Yakin mau di remove ${nama_mahasiswa} dari list ??`);
+                    if(!yakin) return;
+                    
+                    $('#row__'+id_row).fadeOut();
+                
+                }
+                else{
+                    alert('Belum ada aksi.Terimakasih.')
+                }
+            })
+        })
+
+    
+    </script>
+</body>
+</html>
+<h1 align="center"> <a onclick="alert('Kamu mau masuk?'>"href=file:///D:/Data%20Kuliah/SEMESTER%203/Pemrogaman%20SQL/PEMROGRAMAN%20WEB/TUGAS/CV%20Online/form.html>PROJECT LAINNYA</a>
